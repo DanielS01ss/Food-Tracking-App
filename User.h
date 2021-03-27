@@ -1,10 +1,8 @@
 #pragma once
 #include <string>
+#include "enums.h"
+using namespace std;
 
-enum BMI { Under = 0, Normal, Over, Obese, ObeseExtreme };
-enum Activitate { Sedentar = 0, Usoara, Moderata, Intensa };
-enum Scop { Scadere_in_greutate = 0, Mentinere, Crestere_in_greutate };
-enum Metabolism { Lent = 0, Norm, Rapid };
 
 class User {
 
@@ -12,7 +10,7 @@ public:
 
 	User()
 	{
-		std::cout << "Just an empty constructor =))";
+		
 	}
 
 	User(std::string nume, int varsta, bool sex, double greutate, double inaltime, double greutate_dorita, BMI b1, Activitate act, Scop s, Metabolism
@@ -30,7 +28,55 @@ public:
 		this->person_metabolism = m1;
 	}
 
-	
+	void setNume(std::string name)
+	{
+		this->nume = name;
+	}
+
+	void setSex(bool sex)
+	{
+		this->sex = sex;
+	}
+
+	void setVarsta(int age)
+	{
+		this->varsta = age;
+	}
+
+	void setGreutate(double greutate)
+	{
+		this->greutate = greutate;
+	}
+
+	void setInaltime(double inaltime)
+	{
+		this->inaltime = inaltime;
+	}
+
+	void setGreutateDorita(double greutate_dorita)
+	{
+		this->greutate_dorita = greutate_dorita;
+	}
+
+	void setPersonBMI(BMI b)
+	{
+		this->person_bmi = b;
+	}
+
+	void setPersonalScope(Scop s1)
+	{
+		this->personal_purpose = s1;
+	}
+
+	void setPersonMetabolism(Metabolism m1)
+	{
+		this->person_metabolism = m1;
+	}
+	void setPersonActivity(Activitate a)
+	{
+		this->activity = a;
+	}
+
 
 	std::string getNume()
 	{
@@ -67,6 +113,11 @@ public:
 	Metabolism getPersonMetabolism()
 	{
 		return this->person_metabolism;
+	}
+
+	Activitate getPersonActivity()
+	{
+		return this->activity;
 	}
 
 private:
